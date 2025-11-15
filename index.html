@@ -92,9 +92,53 @@
             font-size: 16px;
             font-style: italic;
             font-weight: 500;
+            display: none;
         }
 
-        .search-container {
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .action-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 30px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+            color: white;
+        }
+
+        .home-btn {
+            background: linear-gradient(135deg, #42a5f5 0%, #1976d2 100%);
+        }
+
+        .home-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(25, 118, 210, 0.4);
+        }
+
+        .creator-btn {
+            background: linear-gradient(135deg, #ab47bc 0%, #8e24aa 100%);
+        }
+
+        .creator-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(171, 71, 188, 0.4);
+        }
+
+        .action-btn i {
+            font-size: 18px;
+        }
             max-width: 500px;
             margin: 0 auto 50px auto;
             position: relative;
@@ -698,7 +742,6 @@
                 <div class="header-icon">🎓</div>
                 <h1 class="main-title">Prof Sabu Exam Help</h1>
                 <p class="subtitle">BBA 3rd Semester Study Hub</p>
-                <p class="website-url">www.profsabuexamhelp.in</p>
             </div>
 
             <div class="search-container">
@@ -737,11 +780,69 @@
             <div id="moduleContent"></div>
         </div>
 
+        <div id="aboutView" class="hidden">
+            <div class="nav-header">
+                <button class="back-btn" id="backToHomeFromAbout">
+                    <i class="fas fa-arrow-left"></i>
+                </button>
+                <div>
+                    <h1 class="nav-title">About the Creator</h1>
+                    <p class="nav-subtitle">Sabahuddin - Teaching Professional & BBA Student</p>
+                </div>
+            </div>
+
+            <div class="about-content">
+                <div class="about-header">
+                    <img src="https://drive.google.com/uc?export=view&id=1XpQzKV_SHvaJF7FpzZAxf1bVvRCSnUpG" alt="Sabahuddin" class="creator-photo">
+                    <h2 class="about-title">Meet Sabahuddin</h2>
+                    <p class="about-subtitle">Empowering Students Through Simplified Learning</p>
+                </div>
+
+                <p class="about-text">
+                    I believe that <strong>true understanding comes from simplifying the complex</strong>. As a teaching professional, I've helped hundreds of students master accounting, graphic design, and computer applications—often improving their proficiency by up to 70%. I integrate traditional learning with modern tools, and have trained over 300 students in Tally Prime, MS Office, graphic design, and AI-powered smart learning using platforms like ChatGPT.
+                </p>
+
+                <p class="about-text">
+                    My journey as an <strong>NCC Cadet, NSS Volunteer, and BBA student</strong> has strengthened my discipline, leadership, and commitment to service. I've earned several academic achievements, including a Certificate of Excellence for Distinction in PUC & BBA !st Year, and have won inter-college essay writing, quiz, and logo-making competitions. Serving as <strong>College Captain and Class Representative for four consecutive years</strong> has shaped my teamwork, communication, and responsibility.
+                </p>
+
+                <p class="about-text">
+                    This platform reflects my goal to <strong>make learning simpler, clearer, and more accessible</strong>. I'm passionate about using my skills to create real impact—whether in classrooms, community initiatives, or professional environments—empowering students with clarity, confidence, and modern learning approaches.
+                </p>
+
+                <div class="video-section">
+                    <h3 class="video-title">📹 Watch My Journey</h3>
+                    <a href="https://www.instagram.com/reel/DQwZsCkknrZ/?igsh=MXNmcDRpandkcXlndw==" target="_blank" class="video-link">
+                        <i class="fab fa-instagram"></i>
+                        <span>Watch on Instagram</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
         <footer class="footer">
             <p>© 2025 Prof Sabu Exam Help | BBA Study Resources</p>
             <p>Designed for BBA 3rd Semester Students</p>
             
-            <p class="made-by">Made with ❤️ by: Sabahuddin</p>
+            <p class="made-by">Made with ❤️ by: Sabhahuddin</p>
+            
+            <div class="creator-cta">
+                <div class="sparkles">
+                    <div class="sparkle"></div>
+                    <div class="sparkle"></div>
+                    <div class="sparkle"></div>
+                    <div class="sparkle"></div>
+                </div>
+                <div class="creator-cta-label">✨ MEET THE MIND BEHIND THIS ✨</div>
+                <button class="creator-cta-btn" onclick="showAboutPage()">
+                    <i class="fas fa-hand-pointer btn-icon-left"></i>
+                    <span>
+                        <div class="btn-main-text">Click Here</div>
+                        <div class="btn-sub-text">To Know the Creator</div>
+                    </span>
+                    <i class="fas fa-graduation-cap btn-icon-right"></i>
+                </button>
+            </div>
             
             <div class="social-links">
                 <a href="https://www.instagram.com/sabahuddin_nb?igsh=Z212cGw4ZWlpbmkx" target="_blank" class="social-link instagram-link">
@@ -755,6 +856,10 @@
                 <a href="https://x.com/SabhahuddinB?s=09" target="_blank" class="social-link twitter-link">
                     <i class="fab fa-twitter"></i>
                     <span>Twitter</span>
+                </a>
+                <a href="mailto:sabahuddin227@gmail.com" class="social-link email-link">
+                    <i class="fas fa-envelope"></i>
+                    <span>Email</span>
                 </a>
             </div>
         </footer>
@@ -780,7 +885,7 @@
             'BL-Notes-Folder': 'https://drive.google.com/drive/folders/1x9O1Od_64hA_Vo6f1V_ABW36uluTyk51?usp=drive_link',
             'BL-PPT-Folder': 'https://drive.google.com/drive/folders/1xnkPHnso-TSxW8Pn21pI8WypPTgVbmQo?usp=drive_link',
             'BL-Syllabus': 'https://drive.google.com/drive/folders/1kb6iGDT2PHCd_1eEpXHWGs3XiGIZYuhZ?usp=drive_link',
-            'BL-Previous-Papers': 'https://drive.google.com/drive/folders/1xnkPHnso-TSxW8Pn21pI8WypPTgVbmQo?usp=drive_link',
+            'BL-Previous-Papers': 'https://drive.google.com/drive/folders/17UziUcPe_vZNLtVMNUys-s_F_EGVqGt5?usp=drive_link',
             'BL-Fair-Notes': '',
 
             // Financial Literacy
@@ -795,7 +900,7 @@
             'HCM-PPT-Folder': 'https://drive.google.com/drive/folders/1xN0aXPR6qtoPSYqLts3MCvombouppztI?usp=drive_link',
             'HCM-Syllabus': 'https://drive.google.com/drive/folders/1XEo3xr8qjdusHKQ0qpdbcbamXkg9AMTE?usp=drive_link',
             'HCM-Previous-Papers': 'https://drive.google.com/drive/folders/1c42OnRxkIxMiaHdRFsIjVjCju8mAz14P?usp=drive_link',
-            'HCM-Fair-Notes': '',
+            'HCM-Fair-Notes': 'https://drive.google.com/drive/folders/1onRu1O8TsNb7pFSyGg86WF9VgIyQSYQv?usp=drive_link',
 
             // Cost Accounting
             'CA-Notes-Folder': 'https://drive.google.com/drive/folders/1Fykz2P7UETs9978qNsH2TxdEzNldPP4N?usp=drive_link',
@@ -852,6 +957,7 @@
         const homeView = document.getElementById('homeView');
         const subjectView = document.getElementById('subjectView');
         const moduleView = document.getElementById('moduleView');
+        const aboutView = document.getElementById('aboutView');
         const searchInput = document.getElementById('searchInput');
         const subjectsGrid = document.getElementById('subjectsGrid');
         const sectionsGrid = document.getElementById('sectionsGrid');
@@ -868,7 +974,12 @@
             searchInput.addEventListener('input', handleSearch);
             document.getElementById('backToHome').addEventListener('click', () => showView('home'));
             document.getElementById('backToSubject').addEventListener('click', () => showView('subject'));
+            document.getElementById('backToHomeFromAbout').addEventListener('click', () => showView('home'));
             window.addEventListener('scroll', updateScrollProgress);
+        }
+
+        function showAboutPage() {
+            showView('about');
         }
 
         function updateScrollProgress() {
@@ -891,6 +1002,7 @@
             homeView.classList.add('hidden');
             subjectView.classList.add('hidden');
             moduleView.classList.add('hidden');
+            aboutView.classList.add('hidden');
 
             if (view === 'home') {
                 homeView.classList.remove('hidden');
@@ -901,7 +1013,11 @@
             } else if (view === 'module') {
                 moduleView.classList.remove('hidden');
                 currentView = 'module';
+            } else if (view === 'about') {
+                aboutView.classList.remove('hidden');
+                currentView = 'about';
             }
+            window.scrollTo(0, 0);
         }
 
         function renderSubjects() {
@@ -938,11 +1054,26 @@
         }
 
         function showSubjectSections() {
+            window.scrollTo(0, 0);
             document.getElementById('subjectTitle').textContent = selectedSubject.name;
             document.getElementById('subjectDescription').textContent = selectedSubject.description;
             
             sectionsGrid.innerHTML = '';
-            sectionTypes.forEach((section, index) => {
+            
+            // Filter sections based on subject
+            let availableSections = sectionTypes;
+            
+            // For Cost Accounting and Statistics: Remove PPT, keep Fair Notes
+            if (selectedSubject.code === 'CA' || selectedSubject.code === 'STAT') {
+                availableSections = sectionTypes.filter(section => section.type !== 'ppt');
+            } 
+            // For Business Law, Financial Literacy, English, Hindi: Remove Fair Notes, keep PPT
+            else if (selectedSubject.code === 'BL' || selectedSubject.code === 'FL' || selectedSubject.code === 'ENG' || selectedSubject.code === 'HIN') {
+                availableSections = sectionTypes.filter(section => section.type !== 'fair');
+            }
+            // For HCM: Show all sections (Notes, PPT, Fair Notes, Syllabus, Previous Papers)
+            
+            availableSections.forEach((section, index) => {
                 const card = document.createElement('div');
                 card.className = 'section-card';
                 card.setAttribute('data-type', section.type);
@@ -964,6 +1095,7 @@
         }
 
         function showModuleContent() {
+            window.scrollTo(0, 0);
             document.getElementById('moduleTitle').textContent = 
                 `${selectedSubject.name} - ${selectedSection.name}`;
             
@@ -1043,6 +1175,8 @@
                     showView('subject');
                 } else if (currentView === 'subject') {
                     showView('home');
+                } else if (currentView === 'about') {
+                    showView('home');
                 }
             }
             
@@ -1065,6 +1199,8 @@
                 if (currentView === 'module') {
                     showView('subject');
                 } else if (currentView === 'subject') {
+                    showView('home');
+                } else if (currentView === 'about') {
                     showView('home');
                 }
             }
